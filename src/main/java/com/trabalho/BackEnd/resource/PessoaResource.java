@@ -1,5 +1,6 @@
 package com.trabalho.BackEnd.resource;
 
+import com.trabalho.BackEnd.dto.PessoaDTO;
 import com.trabalho.BackEnd.model.Pessoa;
 import com.trabalho.BackEnd.service.PessoaService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -26,13 +27,13 @@ public class PessoaResource {
     }
 
     @PostMapping
-    public Pessoa save(@RequestBody Pessoa pessoa){
-        return pessoaService.save(pessoa);
+    public Pessoa save(@RequestBody PessoaDTO pessoaDTO){
+        return pessoaService.save(pessoaDTO);
     }
 
     @PutMapping("/{id}")
-    public Pessoa update(@PathVariable Integer id, @RequestBody Pessoa pessoa){
-        return pessoaService.update(id, pessoa);
+    public Pessoa update(@PathVariable Integer id, @RequestBody PessoaDTO pessoaDTO){
+        return pessoaService.update(id, pessoaDTO);
     }
 
     @DeleteMapping("/{id}")
